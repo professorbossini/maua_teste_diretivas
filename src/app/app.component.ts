@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'maua-teste-diretivas';
+
+  pessoas = [
+    { nome: 'José', idade: 18 },
+    { nome: 'Maria', idade: 22 }
+  ]
+
+  onAdicionarPessoa(pessoa) {
+    this.pessoas = [pessoa, ...this.pessoas];
+  }
+
+
+  textoBotao = "Esconder";
+  esconder = false;
+
+  alterarExibicao() {
+    this.textoBotao = this.esconder ? "Exibir" : "Esconder";
+    this.esconder = !this.esconder;
+  }
 }
